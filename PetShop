@@ -1,0 +1,25 @@
+package petshop;
+
+public class PetShop {
+	private Link pets = new Link() ; //����һ������������������
+	public void add(Pet pet) { //�ϼ�
+		this.pets.add(pet) ;
+	}
+	public void delete(Pet pet) {
+		this.pets.remove(pet);
+	}
+	public Link getPets() {
+		return this.pets ;
+	}
+	public Link search(String keyWord) {
+		Link result = new Link() ;
+		Object [] data = this.pets.toArray() ;
+		for (int x = 0; x < data.length ; x ++) {
+			Pet pet = (Pet) data[x] ;
+			if (pet.getName().contains(keyWord) || pet.getColor().contains(keyWord)) { 
+				result.add(pet);
+			}
+		}
+		return result ;
+	}
+}
