@@ -1,0 +1,21 @@
+package petshop;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PetShop ps = new PetShop() ;
+		ps.add(new Dog("�ڹ�",1,"��ɫ"));
+		ps.add(new Dog("��ë",2,"��ɫ"));
+		ps.add(new Dog("����",1,"��ɫ"));
+		ps.add(new Dog("��������",1,"��ɫ"));
+		ps.add(new Cat("�ӷ�è",1,"��ɫ"));
+		ps.add(new Cat("��˹è",1,"��ɫ"));
+		Link all = ps.search("��");
+		Object [] data = all.toArray() ;
+		for (int x = 0 ; x < data.length ; x ++ ) {
+			System.out.println(data[x]);
+		}
+	}
+
+}
