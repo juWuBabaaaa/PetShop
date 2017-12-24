@@ -1,0 +1,49 @@
+package petshop;
+import petshop.Pet;
+public class Cat implements Pet {
+
+	private String name ;
+	private int age ;
+	private String color ;
+	
+	public Cat(String name, int age, String color) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.color = color;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
+
+	@Override
+	public String getColor() {
+		// TODO Auto-generated method stub
+		return this.color;
+	}
+
+	@Override
+	public int getAge() {
+		// TODO Auto-generated method stub
+		return this.age;
+	}
+	public String toString() {
+		return "��è���֡���" + this.name + "�����䣺" + this.age + "����ɫ��" + this.color ;
+	}
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false ;
+		}
+		if (this == obj) {
+			return true ;
+		}
+		if (!(obj instanceof Dog)) {
+			return false ;
+		}
+		Dog pet = (Dog) obj ;
+		return this.name.equals(pet.getName()) && this.age == (pet.getAge()) && this.color.equals(pet.getColor()) ;
+	}
+}
